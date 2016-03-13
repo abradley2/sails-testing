@@ -1,0 +1,50 @@
+<h3>Edit Post</h3>
+<form id='post-form' data-id="{{post.id}}">
+  <input type='text' class='form-control' data-form='title'/>
+  <textarea class='form-control' rows='4' data-form='description'></textarea>
+  <input type='text' class='form-control' data-form='tags' />
+
+  <textarea class='form-control' rows='4' data-form=''></textarea>
+  <textarea class='form-control' class='markdown-editor' value="{{post.content.body}}"></textarea>
+</form>
+
+<script type='text/javascript'>
+$(document).ready(function(){
+
+var postForm = {
+  id: $('#post-form').attr('data-id'),
+  title: $('[data-form="title"]'),
+  description: $('[data-form="description"]'),
+  tags: $('[data-form="tags"]'),
+  draft: $('[data-form="draft"]'),
+  content: {
+    intro: $('[data-form="content.intro"]'),
+    body: $('[data-form="content.body"]')
+  }
+};
+
+
+if (postForm.id !=== 'new') populateForm();
+
+function populateForm(){
+  $.get('/posts/' + postForm.id).then(function(res){
+    postForm.title.val(res.title);
+    postForm.description.val(res.description);
+    postForm.tags.val(res.tags);
+    postForm.draft.attr('checked', res.draft);
+  })
+}
+
+
+function save(){
+  var id = $('[data-id]').attr('data-id');
+
+  if (id === 'new'){
+    // create a new post
+  } else {
+    // update an existing post
+  }
+}
+
+});
+</script>

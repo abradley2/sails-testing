@@ -1,0 +1,10 @@
+{{#if posts}}
+    {{#each posts}}
+        <div class='post-title'>
+            <a href='posts/{{id}}'>{{title}}</a>
+        </div>
+        <small>
+            {{createdAt}}
+        </small>
+    {{/each}}
+{{/if}}

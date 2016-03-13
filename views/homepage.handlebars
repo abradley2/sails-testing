@@ -1,0 +1,18 @@
+<h3>Hello World!</h3>
+
+{{#if post}}
+  <div class='post'>
+    <h3 class='post-title'>
+      {{post.title}}
+    </h3>
+    <small class='post-info'>
+      {{post.createdAt}}
+    </small>
+    <div class='post-content-intro'>
+      {{post.content.intro}}
+    </div>
+    <div class='post-content-body'>
+      {{{post.content.body}}}
+    </div>
+  </div>
+{{/if}}

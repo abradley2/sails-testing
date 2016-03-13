@@ -1,0 +1,18 @@
+{{#if post}}
+  <div class='post'>
+    <h3 class='post-title'>
+      {{post.title}}
+    </h3>
+    <small class='post-info'>
+      {{post.createdAt}}
+    </small>
+    <div class='post-contet-intro'>
+      {{post.content.intro}}
+    </div>
+    <div class='post-content-body'>
+      {{{post.content.body}}}
+    </div>
+  </div>
+{{else}}
+  <h3>Post not found</h3>
+{{/if}}

@@ -1,0 +1,15 @@
+<h3>Archive</h3>
+
+{{#if posts}}
+    {{#each posts}}
+        <div class='post-title'>
+            <a href='posts/{{id}}'>{{title}}</a>
+        </div>
+        <small>
+            {{createdAt}}
+        </small>
+        <div class='post-description'>
+            {{description}}
+        </div>
+    {{/each}}
+{{/if}}
